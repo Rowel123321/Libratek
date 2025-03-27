@@ -11,6 +11,14 @@ Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('notifications', function () {
+    return Inertia::render('Notifications');
+})->middleware(['auth', 'verified'])->name('notifications');
+
+Route::get('logs', function () {
+    return Inertia::render('Logs');
+})->middleware(['auth', 'verified'])->name('logs');
+
 use App\Http\Controllers\BookshelfController;
 
 Route::get('/bookshelves', [BookshelfController::class, 'index']);
